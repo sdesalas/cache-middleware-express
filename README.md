@@ -2,21 +2,19 @@
 
 A memory caching middleware for express. 
 
-Sample usage
+Usage
 --------------
 
 ```javascript
-const cache = require('cache-middleware-express');
 const express = require('express');
+const cache = require('cache-middleware-express');
 
 const app = express();
 
-// This route should cache for about about 30 seconds
+// Cache single route for 30 seconds
 app.get('/some/api/url', cache(30), (req, res) => ...)
 
-// This route should cache for about a minute and a half
-app.get('/some/api/url', cache(90), (req, res) => ...)
-
-// This route should cache for an hour
+// Cache single route for an hour
 app.get('/some/api/url', cache(60*60), (req, res) => ...)
+
 ```
